@@ -32,38 +32,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %{find_lang} %{name}
 
-# add startup script
-install -d %buildroot%_bindir
-cat > %buildroot%_bindir/startlxde << EOF
-#!/bin/sh
-exec /usr/bin/lxsession -s LXDE
-EOF
-chmod +x %buildroot%_bindir/startlxde
-
-# add wmsession.d
-install -d %buildroot%_sysconfdir/X11/wmsession.d/
-cat > %buildroot%_sysconfdir/X11/wmsession.d/26LXDE << EOF
-NAME=LXDE
-DESC=Lightweight X11 Desktops Environment
-EXEC=/usr/bin/startlxde
-SCRIPT:
-exec /usr/bin/startlxde
-EOF
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post  
-%make_session
-
-%postun
-%make_session
-
 %files -f %{name}.lang
 %defattr(-, root, root)
-%attr(644,root,root) %{_sysconfdir}/X11/wmsession.d/26LXDE
 %{_bindir}/lxsession
 %{_bindir}/lxsession-logout
-%{_bindir}/startlxde
 %{_datadir}/lxsession
 %{_mandir}/man1/*
