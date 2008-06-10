@@ -11,6 +11,7 @@ BuildRequires:	gtk+2-devel
 BuildRequires:	dbus-glib-devel
 BuildRequires:	docbook-to-man
 Requires:	desktop-common-data
+Conflicts:	lxsession-lite
 Provides:	lxde-session-manager
 
 %description
