@@ -10,6 +10,7 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	gtk+2-devel
 BuildRequires:	dbus-glib-devel
 BuildRequires:	docbook-to-man
+BuildRequires:	intltool
 Requires:	desktop-common-data
 Obsoletes:	lxsession-lite < %version
 Provides:	lxsession-lite = %version
