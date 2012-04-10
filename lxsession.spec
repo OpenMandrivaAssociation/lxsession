@@ -1,7 +1,7 @@
 Summary:	The default X11 session manager of LXDE
 Name:     	lxsession
 Version:	0.4.6.1
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.gz
@@ -11,7 +11,6 @@ URL:		http://www.lxde.org
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	gtk+2-devel
 BuildRequires:	dbus-glib-devel
-BuildRequires:	docbook-to-man
 BuildRequires:	intltool
 Requires:	desktop-common-data
 Obsoletes:	lxsession-lite < %version
