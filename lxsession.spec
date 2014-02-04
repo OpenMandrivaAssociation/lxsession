@@ -1,17 +1,19 @@
 Summary:	The default X11 session manager of LXDE
 Name:		lxsession
-Version:	0.4.6.1
-Release:	8
+Version:	0.4.6.2
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		http://www.lxde.org
-Source0:	http://dfn.dl.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.gz
-Patch1:		lxsession-0.4.6.1-gdm3.patch
-Patch2:		lxsession-0.4.6.1-ltsp.patch
+Source0:	http://dfn.dl.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.xz
+# Our docbook tools work... The configure script just detects them incorrectly
+# because of /etc/sgml vs. /etc/xml confusion
+Patch0:		lxsession-0.4.6.2-disable-broken-docbook-sanity-check.patch
 BuildRequires:	docbook-to-man
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(dbus-glib-1)
-BuildRequires:	pkgconfig(gtk+-x11-2.0)
+BuildRequires:	xsltproc
+BuildRequires:	docbook-dtd412-xml
 Requires:	desktop-common-data
 %rename		lxsession-lite
 Provides:	lxde-session-manager
@@ -27,9 +29,10 @@ window managers and desktop environemts.
 %prep
 %setup -q
 %apply_patches
+[ -e autogen.sh ] && ./autogen.sh
 
 %build
-%configure2_5x
+%configure2_5x --disable-gtk --disable-gtk3
 %make
 
 %install
@@ -39,8 +42,13 @@ window managers and desktop environemts.
 
 %files -f %{name}.lang
 %{_bindir}/lxsession
+%{_bindir}/lxsession-default
+%{_bindir}/lxsession-default-terminal
+%{_bindir}/lxsession-xsettings
+%{_bindir}/lxsettings-daemon
 %{_bindir}/lxlock
-%{_bindir}/lxsession-logout
 %{_datadir}/lxsession
+%{_datadir}/applications/lxsession-edit.desktop
+%{_datadir}/applications/lxsession-default-apps.desktop
 %{_mandir}/man1/*
 
