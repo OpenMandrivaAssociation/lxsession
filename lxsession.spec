@@ -1,7 +1,7 @@
 Summary:	The default X11 session manager of LXDE
 Name:		lxsession
 Version:	0.4.6.1
-Release:	4
+Release:	5
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		http://www.lxde.org
