@@ -14,6 +14,7 @@ BuildRequires:	intltool
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	xsltproc
 BuildRequires:	docbook-dtd412-xml
+BuildRequires:	pkgconfig(x11)
 Requires:	desktop-common-data
 %rename		lxsession-lite
 Provides:	lxde-session-manager
