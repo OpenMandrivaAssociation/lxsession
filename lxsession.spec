@@ -16,6 +16,7 @@ BuildRequires:	xsltproc
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(glib-2.0)
+BuildRequires:	vala
 Requires:	desktop-common-data
 %rename		lxsession-lite
 Provides:	lxde-session-manager
