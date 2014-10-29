@@ -1,11 +1,11 @@
 Summary:	The default X11 session manager of LXDE
 Name:		lxsession
-Version:	0.4.6.2
-Release:	3
+Version:	0.5.1
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		http://www.lxde.org
-Source0:	http://dfn.dl.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.xz
+Source0:	http://sourceforge.net/projects/lxde/files/LXSession%20%28session%20manager%29/LXSession%200.5.x/%{name}-%{version}.tar.xz
 # Our docbook tools work... The configure script just detects them incorrectly
 # because of /etc/sgml vs. /etc/xml confusion
 Patch0:		lxsession-0.4.6.2-disable-broken-docbook-sanity-check.patch
@@ -55,4 +55,3 @@ window managers and desktop environemts.
 %{_datadir}/applications/lxsession-edit.desktop
 %{_datadir}/applications/lxsession-default-apps.desktop
 %{_mandir}/man1/*
-

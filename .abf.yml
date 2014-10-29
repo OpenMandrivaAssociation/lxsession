@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   lxsession-0.4.6.2.tar.xz: 8a96ff9302560760e3c1a53000341a495c161a3a
+sources:
+  lxsession-0.5.1.tar.xz: 3419802c9e7269093900dd5fd4948acb95dec253
