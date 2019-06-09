@@ -115,6 +115,7 @@ session autostarts, especially for LXSession.
 
 %prep
 %setup -q
+%autosetup -p1
 sh ./autogen.sh
 
 %build
@@ -122,10 +123,10 @@ sh ./autogen.sh
 	--disable-gtk  \
 	--disable-gtk3 \
 	%{nil}
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 # locales
 %find_lang %{name}
