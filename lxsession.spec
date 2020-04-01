@@ -1,14 +1,16 @@
 Summary:	The default X11 session manager of LXDE
 Name:		lxsession
-Version:	0.5.4
+Version:	0.5.5
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		http://www.lxde.org
 Source0:	https://downloads.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.xz
-# Our docbook tools work... The configure script just detects them incorrectly
-# because of /etc/sgml vs. /etc/xml confusion
-#Patch0:		lxsession-0.4.6.2-disable-broken-docbook-sanity-check.patch
+# Patch from https://sourceforge.net/p/lxde/bugs/760/#29fe/6196 to correct reload option behavior
+Patch1:	%{name}-0.5.2-git9f8d6133-reload.patch
+Patch2:	%{name}-0.5.2-notify-daemon-default.patch
+Patch3:	lxpolkit-0.5.5-openmandriva-disable-lxpolkit-autostart-for-other-environments.patch
+Patch4:	d8ff02363de5e7e8cd3bc51958104cfa81b4a9bc.patch
 
 BuildRequires:  desktop-file-utils
 BuildRequires:	docbook-to-man
@@ -45,30 +47,6 @@ restart them the next time the user logs in.
 LXSession is the standard session manager used by LXDE but it's
 desktop-independent and can be used with any window manager.
 
-%files -f %{name}.lang
-%{_bindir}/lxsettings-daemon
-%{_bindir}/lxlock
-%{_bindir}/lxclipboard
-%{_bindir}/%{name}
-%{_bindir}/%{name}-logout
-%{_bindir}/%{name}-db
-%{_bindir}/%{name}-default
-%{_bindir}/%{name}-default-apps
-%{_bindir}/%{name}-default-terminal
-%{_bindir}/%{name}-xdg-autostart
-%dir %{_libexecdir}/%{name}
-%{_libexecdir}/%{name}/%{name}-xsettings
-%{_datadir}/%{name}/
-%exclude %{_datadir}/%{name}/ui/lxpolkit.ui
-%exclude %{_datadir}/%{name}/ui/lxsession-edit.ui
-%{_datadir}/applications/lxsession-default-apps.desktop
-%{_mandir}/man1/%{name}*.*
-%{_mandir}/man1/lxlock.1*
-%{_mandir}/man1/lxpolkit.1*
-%{_mandir}/man1/lxclipboard.1*
-%{_mandir}/man1/lxsettings-daemon.1*
-%dir %{_sysconfdir}/xdg/%{name}
-
 #---------------------------------------------------------------------------
 
 %package -n lxpolkit
@@ -76,7 +54,6 @@ Summary:        Simple PolicyKit authentication agent
 Requires:       polkit >= 0.95
 # required to replace polkit-gnome and polkit-kde
 Provides:       PolicyKit-authentication-agent
-
 
 %description -n lxpolkit
 LXDE, which stands for Lightweight X11 Desktop Environment, is a desktop
@@ -86,11 +63,6 @@ while being a feature rich desktop environment.
 
 LXPolKit is a simple PolicyKit authentication agent developed for LXDE, the
 Lightweight X11 Desktop Environment.
-
-%files
-%{_bindir}/lxpolkit
-%config %{_sysconfdir}/xdg/autostart/lxpolkit.desktop
-%{_datadir}/%{name}/ui/lxpolkit.ui
 
 #---------------------------------------------------------------------------
 
@@ -106,11 +78,6 @@ while being a feature rich desktop environment.
 LXSession-edit is a tool used to manage freedesktop.org compliant desktop
 session autostarts, especially for LXSession.
 
-%files edit
-%{_bindir}/%{name}-edit
-%{_datadir}/applications/lxsession-edit.desktop
-%{_datadir}/%{name}/ui/lxsession-edit.ui
-
 #---------------------------------------------------------------------------
 
 %prep
@@ -119,14 +86,45 @@ session autostarts, especially for LXSession.
 sh ./autogen.sh
 
 %build
-%configure \
-	--disable-gtk  \
-	--disable-gtk3 \
-	%{nil}
+%configure --enable-advanced-notifications
+
 %make_build
 
 %install
 %make_install
 
+mkdir -p %{buildroot}%{_datadir}/app-install/desktop
+
 # locales
 %find_lang %{name}
+
+%files -f %{name}.lang
+%{_bindir}/lxlock
+%{_bindir}/%{name}
+%{_bindir}/%{name}-logout
+%{_bindir}/lxclipboard
+%{_bindir}/%{name}-default
+%{_bindir}/%{name}-default-apps
+%{_bindir}/%{name}-default-terminal
+%{_bindir}/%{name}-edit
+%{_bindir}/%{name}-db
+%{_bindir}/%{name}-xdg-autostart
+%{_bindir}/lxsettings-daemon
+%{_datadir}/app-install/desktop
+%{_datadir}/applications/%{name}-default-apps.desktop
+%{_datadir}/applications/%{name}-edit.desktop
+%{_datadir}/%{name}/images
+%{_datadir}/%{name}/ui/%{name}-default-apps.ui
+%{_datadir}/%{name}/ui/%{name}-edit.ui
+%{_libexecdir}/%{name}/%{name}-xsettings
+%{_mandir}/man1/*
+
+%files -n lxpolkit
+%{_bindir}/lxpolkit
+%{_sysconfdir}/xdg/autostart/lxpolkit.desktop
+%{_datadir}/%{name}/ui/lxpolkit.ui
+
+%files edit
+%{_bindir}/%{name}-edit
+%{_datadir}/applications/lxsession-edit.desktop
+%{_datadir}/%{name}/ui/lxsession-edit.ui
