@@ -1,0 +1,926 @@
+From d8ff02363de5e7e8cd3bc51958104cfa81b4a9bc Mon Sep 17 00:00:00 2001
+From: Andriy Grytsenko <andrej@rep.kiev.ua>
+Date: Fri, 20 Mar 2020 21:00:20 +0200
+Subject: [PATCH] Fix spelling error: transpacency -> transparency
+
+---
+ lxsession-default-apps/main.vala | 2 +-
+ po/af.po                         | 2 +-
+ po/am.po                         | 2 +-
+ po/ar.po                         | 2 +-
+ po/ast.po                        | 2 +-
+ po/be.po                         | 2 +-
+ po/bg.po                         | 2 +-
+ po/bn.po                         | 2 +-
+ po/bn_IN.po                      | 2 +-
+ po/ca.po                         | 2 +-
+ po/cs.po                         | 2 +-
+ po/da.po                         | 2 +-
+ po/de.po                         | 2 +-
+ po/el.po                         | 2 +-
+ po/en_GB.po                      | 2 +-
+ po/eo.po                         | 2 +-
+ po/es.po                         | 2 +-
+ po/et.po                         | 5 +++--
+ po/eu.po                         | 2 +-
+ po/fa.po                         | 2 +-
+ po/fi.po                         | 2 +-
+ po/fo.po                         | 2 +-
+ po/fr.po                         | 2 +-
+ po/frp.po                        | 2 +-
+ po/gl.po                         | 2 +-
+ po/he.po                         | 2 +-
+ po/hr.po                         | 2 +-
+ po/hu.po                         | 2 +-
+ po/id.po                         | 2 +-
+ po/is.po                         | 2 +-
+ po/it.po                         | 2 +-
+ po/ja.po                         | 2 +-
+ po/kk.po                         | 2 +-
+ po/ko.po                         | 2 +-
+ po/lg.po                         | 2 +-
+ po/lt.po                         | 2 +-
+ po/lxsession.pot                 | 2 +-
+ po/ml.po                         | 2 +-
+ po/ms.po                         | 2 +-
+ po/nb.po                         | 2 +-
+ po/nl.po                         | 2 +-
+ po/nn.po                         | 2 +-
+ po/pa.po                         | 2 +-
+ po/pl.po                         | 2 +-
+ po/ps.po                         | 2 +-
+ po/pt.po                         | 2 +-
+ po/pt_BR.po                      | 2 +-
+ po/ro.po                         | 2 +-
+ po/ru.po                         | 2 +-
+ po/si.po                         | 2 +-
+ po/sk.po                         | 2 +-
+ po/sl.po                         | 2 +-
+ po/sr.po                         | 2 +-
+ po/sr@latin.po                   | 2 +-
+ po/sv.po                         | 2 +-
+ po/te.po                         | 2 +-
+ po/th.po                         | 2 +-
+ po/tr.po                         | 2 +-
+ po/tt_RU.po                      | 2 +-
+ po/ug.po                         | 2 +-
+ po/uk.po                         | 2 +-
+ po/ur.po                         | 2 +-
+ po/ur_PK.po                      | 2 +-
+ po/vi.po                         | 2 +-
+ po/zh_CN.po                      | 2 +-
+ po/zh_TW.po                      | 2 +-
+ 66 files changed, 68 insertions(+), 67 deletions(-)
+
+diff --git a/lxsession-default-apps/main.vala b/lxsession-default-apps/main.vala
+index 718b568..ab64320 100644
+--- a/lxsession-default-apps/main.vala
++++ b/lxsession-default-apps/main.vala
+@@ -185,7 +185,7 @@ namespace LDefaultApps
+             string file_manager_more_help_message = manual_setting_help + session_string_help + extra_string_help + handle_desktop_help + mime_association_help + mime_available_help;
+             init_application_combobox (builder, kf, dbus_backend, "file_manager", "", file_manager_help_message, file_manager_more, file_manager_more_help_message, null);
+ 
+-            string composite_manager_help_message = _("Composite manager enables graphics effects, like transpacency and shadows, if the windows manager doesn't handle it. \nExample: compton");
++            string composite_manager_help_message = _("Composite manager enables graphics effects, like transparency and shadows, if the windows manager doesn't handle it. \nExample: compton");
+             string[] composite_manager_more = {""};
+             string composite_manager_more_help_message = "";
+             init_application(builder, kf, dbus_backend, "composite_manager", "", composite_manager_help_message, composite_manager_more, composite_manager_more_help_message, null);
+diff --git a/po/af.po b/po/af.po
+index 94e0663..29f51c4 100644
+--- a/po/af.po
++++ b/po/af.po
+@@ -525,7 +525,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/am.po b/po/am.po
+index 42b3416..562bce1 100644
+--- a/po/am.po
++++ b/po/am.po
+@@ -524,7 +524,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/ar.po b/po/ar.po
+index 87e9785..8b2bb29 100644
+--- a/po/ar.po
++++ b/po/ar.po
+@@ -546,7 +546,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/ast.po b/po/ast.po
+index 7bb4824..5fdeb46 100644
+--- a/po/ast.po
++++ b/po/ast.po
+@@ -525,7 +525,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/be.po b/po/be.po
+index 6c18e2e..b78a57c 100644
+--- a/po/be.po
++++ b/po/be.po
+@@ -548,7 +548,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/bg.po b/po/bg.po
+index 592a9e5..d548c90 100644
+--- a/po/bg.po
++++ b/po/bg.po
+@@ -555,7 +555,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/bn.po b/po/bn.po
+index 65fa94f..1a456f0 100644
+--- a/po/bn.po
++++ b/po/bn.po
+@@ -526,7 +526,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/bn_IN.po b/po/bn_IN.po
+index 8dbdd7c..6cac85c 100644
+--- a/po/bn_IN.po
++++ b/po/bn_IN.po
+@@ -526,7 +526,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/ca.po b/po/ca.po
+index 1088687..b16687c 100644
+--- a/po/ca.po
++++ b/po/ca.po
+@@ -552,7 +552,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/cs.po b/po/cs.po
+index 6467ae6..f63e878 100644
+--- a/po/cs.po
++++ b/po/cs.po
+@@ -543,7 +543,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/da.po b/po/da.po
+index 452e3af..28bf6ab 100644
+--- a/po/da.po
++++ b/po/da.po
+@@ -547,7 +547,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/de.po b/po/de.po
+index a6e6c0f..d4010f2 100644
+--- a/po/de.po
++++ b/po/de.po
+@@ -557,7 +557,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/el.po b/po/el.po
+index 52d6953..30c9fd9 100644
+--- a/po/el.po
++++ b/po/el.po
+@@ -554,7 +554,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/en_GB.po b/po/en_GB.po
+index 43ca8a6..84f6d3a 100644
+--- a/po/en_GB.po
++++ b/po/en_GB.po
+@@ -546,7 +546,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/eo.po b/po/eo.po
+index d1f6921..b29b125 100644
+--- a/po/eo.po
++++ b/po/eo.po
+@@ -525,7 +525,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/es.po b/po/es.po
+index 5ce0f7f..570e9e9 100644
+--- a/po/es.po
++++ b/po/es.po
+@@ -548,7 +548,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/et.po b/po/et.po
+index 13a2650..38975d6 100644
+--- a/po/et.po
++++ b/po/et.po
+@@ -544,12 +544,13 @@ msgstr ""
+ "vaadake \"Veel\""
+ 
+ #: ../lxsession-default-apps/main.vala:173
++#, fuzzy
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+-"Komposiitjuht võimaldab graafika efekte, nagu näiteks transpacency ja "
++"Komposiitjuht võimaldab graafika efekte, nagu näiteks transparency ja "
+ "varjud, kui Windowsi juht ei tegele sellega.\n"
+ "Näide: compton"
+ 
+diff --git a/po/eu.po b/po/eu.po
+index 8e0c6f8..513175d 100644
+--- a/po/eu.po
++++ b/po/eu.po
+@@ -549,7 +549,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/fa.po b/po/fa.po
+index a1b97f7..bd09899 100644
+--- a/po/fa.po
++++ b/po/fa.po
+@@ -525,7 +525,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/fi.po b/po/fi.po
+index effc59a..cc22019 100644
+--- a/po/fi.po
++++ b/po/fi.po
+@@ -530,7 +530,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/fo.po b/po/fo.po
+index 6f8d649..a844997 100644
+--- a/po/fo.po
++++ b/po/fo.po
+@@ -525,7 +525,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/fr.po b/po/fr.po
+index 5b31b64..5fcea14 100644
+--- a/po/fr.po
++++ b/po/fr.po
+@@ -549,7 +549,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/frp.po b/po/frp.po
+index 921ece0..a1e5138 100644
+--- a/po/frp.po
++++ b/po/frp.po
+@@ -525,7 +525,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/gl.po b/po/gl.po
+index cde79b6..9145fb2 100644
+--- a/po/gl.po
++++ b/po/gl.po
+@@ -561,7 +561,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/he.po b/po/he.po
+index 4ceb60b..64ec40f 100644
+--- a/po/he.po
++++ b/po/he.po
+@@ -530,7 +530,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/hr.po b/po/hr.po
+index 177a5d8..90dddb6 100644
+--- a/po/hr.po
++++ b/po/hr.po
+@@ -537,7 +537,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/hu.po b/po/hu.po
+index 67f2f51..27970fb 100644
+--- a/po/hu.po
++++ b/po/hu.po
+@@ -528,7 +528,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/id.po b/po/id.po
+index 67689e2..5795d46 100644
+--- a/po/id.po
++++ b/po/id.po
+@@ -547,7 +547,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/is.po b/po/is.po
+index a66e951..28a852c 100644
+--- a/po/is.po
++++ b/po/is.po
+@@ -522,7 +522,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/it.po b/po/it.po
+index 77d2ee7..fbc3e1a 100644
+--- a/po/it.po
++++ b/po/it.po
+@@ -555,7 +555,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/ja.po b/po/ja.po
+index a8cf464..5ad74d1 100644
+--- a/po/ja.po
++++ b/po/ja.po
+@@ -539,7 +539,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/kk.po b/po/kk.po
+index 572527c..cd5224c 100644
+--- a/po/kk.po
++++ b/po/kk.po
+@@ -530,7 +530,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/ko.po b/po/ko.po
+index 0e4509f..b2df6d3 100644
+--- a/po/ko.po
++++ b/po/ko.po
+@@ -534,7 +534,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/lg.po b/po/lg.po
+index 5f4e0df..7fb6395 100644
+--- a/po/lg.po
++++ b/po/lg.po
+@@ -547,7 +547,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/lt.po b/po/lt.po
+index f610039..8125113 100644
+--- a/po/lt.po
++++ b/po/lt.po
+@@ -546,7 +546,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/ml.po b/po/ml.po
+index 21fd7dd..f1f1d90 100644
+--- a/po/ml.po
++++ b/po/ml.po
+@@ -521,7 +521,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/ms.po b/po/ms.po
+index 85a0c34..6f733fd 100644
+--- a/po/ms.po
++++ b/po/ms.po
+@@ -531,7 +531,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/nb.po b/po/nb.po
+index 68c29da..16bdd7a 100644
+--- a/po/nb.po
++++ b/po/nb.po
+@@ -527,7 +527,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/nl.po b/po/nl.po
+index be9d8fa..e727382 100644
+--- a/po/nl.po
++++ b/po/nl.po
+@@ -553,7 +553,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/nn.po b/po/nn.po
+index 206ba10..982e437 100644
+--- a/po/nn.po
++++ b/po/nn.po
+@@ -525,7 +525,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/pa.po b/po/pa.po
+index 69a3605..a8ed347 100644
+--- a/po/pa.po
++++ b/po/pa.po
+@@ -524,7 +524,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/pl.po b/po/pl.po
+index e1b8d7a..6f8fef6 100644
+--- a/po/pl.po
++++ b/po/pl.po
+@@ -549,7 +549,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/ps.po b/po/ps.po
+index 2ed70c7..5d02e06 100644
+--- a/po/ps.po
++++ b/po/ps.po
+@@ -521,7 +521,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/pt.po b/po/pt.po
+index 90ea4f0..bddecf2 100644
+--- a/po/pt.po
++++ b/po/pt.po
+@@ -549,7 +549,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/pt_BR.po b/po/pt_BR.po
+index 6e18722..c0464c2 100644
+--- a/po/pt_BR.po
++++ b/po/pt_BR.po
+@@ -550,7 +550,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/ro.po b/po/ro.po
+index 3d7b360..7f5718f 100644
+--- a/po/ro.po
++++ b/po/ro.po
+@@ -547,7 +547,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/ru.po b/po/ru.po
+index ee94633..9953d59 100644
+--- a/po/ru.po
++++ b/po/ru.po
+@@ -550,7 +550,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/si.po b/po/si.po
+index e275bc8..e3d6401 100644
+--- a/po/si.po
++++ b/po/si.po
+@@ -525,7 +525,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/sk.po b/po/sk.po
+index 7051447..5401004 100644
+--- a/po/sk.po
++++ b/po/sk.po
+@@ -546,7 +546,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/sl.po b/po/sl.po
+index 6090e2d..1c96d93 100644
+--- a/po/sl.po
++++ b/po/sl.po
+@@ -536,7 +536,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/sr.po b/po/sr.po
+index de257dc..492a43d 100644
+--- a/po/sr.po
++++ b/po/sr.po
+@@ -546,7 +546,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/sr@latin.po b/po/sr@latin.po
+index da37fe1..e004bbe 100644
+--- a/po/sr@latin.po
++++ b/po/sr@latin.po
+@@ -545,7 +545,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/sv.po b/po/sv.po
+index 612dfe0..62e4ba9 100644
+--- a/po/sv.po
++++ b/po/sv.po
+@@ -546,7 +546,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/te.po b/po/te.po
+index 443da30..bd8715e 100644
+--- a/po/te.po
++++ b/po/te.po
+@@ -526,7 +526,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/th.po b/po/th.po
+index 98bb5af..d451ae6 100644
+--- a/po/th.po
++++ b/po/th.po
+@@ -521,7 +521,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/tr.po b/po/tr.po
+index 0045efc..4fc4083 100644
+--- a/po/tr.po
++++ b/po/tr.po
+@@ -547,7 +547,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/tt_RU.po b/po/tt_RU.po
+index dcd2e27..fbc4d21 100644
+--- a/po/tt_RU.po
++++ b/po/tt_RU.po
+@@ -525,7 +525,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/ug.po b/po/ug.po
+index b0a15a3..72e1651 100644
+--- a/po/ug.po
++++ b/po/ug.po
+@@ -546,7 +546,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/uk.po b/po/uk.po
+index f9ce2e7..e17b061 100644
+--- a/po/uk.po
++++ b/po/uk.po
+@@ -529,7 +529,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/ur.po b/po/ur.po
+index d17a7c4..e65e80d 100644
+--- a/po/ur.po
++++ b/po/ur.po
+@@ -526,7 +526,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/ur_PK.po b/po/ur_PK.po
+index d17a7c4..e65e80d 100644
+--- a/po/ur_PK.po
++++ b/po/ur_PK.po
+@@ -526,7 +526,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/vi.po b/po/vi.po
+index be0fa26..8fa3d07 100644
+--- a/po/vi.po
++++ b/po/vi.po
+@@ -546,7 +546,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/zh_CN.po b/po/zh_CN.po
+index 24100e5..ca1466c 100644
+--- a/po/zh_CN.po
++++ b/po/zh_CN.po
+@@ -532,7 +532,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
+diff --git a/po/zh_TW.po b/po/zh_TW.po
+index 2db95b7..00aa8bc 100644
+--- a/po/zh_TW.po
++++ b/po/zh_TW.po
+@@ -546,7 +546,7 @@ msgstr ""
+ 
+ #: ../lxsession-default-apps/main.vala:173
+ msgid ""
+-"Composite manager enables graphics effects, like transpacency and shadows, "
++"Composite manager enables graphics effects, like transparency and shadows, "
+ "if the windows manager doesn't handle it. \n"
+ "Example: compton"
+ msgstr ""
