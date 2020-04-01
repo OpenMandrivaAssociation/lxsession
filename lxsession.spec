@@ -88,6 +88,8 @@ sh ./autogen.sh
 %install
 %make_install
 
+mkdir -p %{buildroot}%{_datadir}/app-install/desktop
+
 # locales
 %find_lang %{name}
 
