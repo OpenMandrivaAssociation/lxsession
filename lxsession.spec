@@ -1,6 +1,6 @@
 Summary:	The default X11 session manager of LXDE
 Name:		lxsession
-Version:	0.5.4
+Version:	0.5.5
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Other
@@ -119,10 +119,8 @@ session autostarts, especially for LXSession.
 sh ./autogen.sh
 
 %build
-%configure \
-	--disable-gtk  \
-	--disable-gtk3 \
-	%{nil}
+%configure --enable-advanced-notifications
+
 %make_build
 
 %install
