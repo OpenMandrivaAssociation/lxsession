@@ -6,9 +6,6 @@ License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		http://www.lxde.org
 Source0:	https://downloads.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.xz
-# Our docbook tools work... The configure script just detects them incorrectly
-# because of /etc/sgml vs. /etc/xml confusion
-#Patch0:		lxsession-0.4.6.2-disable-broken-docbook-sanity-check.patch
 
 BuildRequires:  desktop-file-utils
 BuildRequires:	docbook-to-man
@@ -49,13 +46,7 @@ desktop-independent and can be used with any window manager.
 %{_bindir}/lxsettings-daemon
 %{_bindir}/lxlock
 %{_bindir}/lxclipboard
-%{_bindir}/%{name}
-%{_bindir}/%{name}-logout
-%{_bindir}/%{name}-db
-%{_bindir}/%{name}-default
-%{_bindir}/%{name}-default-apps
-%{_bindir}/%{name}-default-terminal
-%{_bindir}/%{name}-xdg-autostart
+%{_bindir}/%{name}*
 %dir %{_libexecdir}/%{name}
 %{_libexecdir}/%{name}/%{name}-xsettings
 %{_datadir}/%{name}/
