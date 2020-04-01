@@ -6,6 +6,12 @@ License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		http://www.lxde.org
 Source0:	https://downloads.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.xz
+# Patch from https://sourceforge.net/p/lxde/bugs/760/#29fe/6196 to correct reload option behavior
+Patch1:	%{name}-0.5.2-git9f8d6133-reload.patch
+Patch2:	%{name}-0.5.2-notify-daemon-default.patch
+Patch3:	lxpolkit-0.5.5-openmandriva-disable-lxpolkit-autostart-for-other-environments.patch
+Patch4:	d8ff02363de5e7e8cd3bc51958104cfa81b4a9bc.patch
+URL:		http://www.lxde.org
 
 BuildRequires:  desktop-file-utils
 BuildRequires:	docbook-to-man
