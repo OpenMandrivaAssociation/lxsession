@@ -8,8 +8,9 @@ License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		http://www.lxde.org
 # Current stable rel is old, use latest master git instead https://github.com/lxde/lxsession/
-Source0:  %{name}-master.zip
+Source0:  %{name}-%{version}-git-%{git}.tar.gz
 #Source0:	https://downloads.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.xz
+
 # Patch from https://sourceforge.net/p/lxde/bugs/760/#29fe/6196 to correct reload option behavior
 Patch1:	%{name}-0.5.2-git9f8d6133-reload.patch
 Patch2:	%{name}-0.5.2-notify-daemon-default.patch
@@ -85,7 +86,7 @@ session autostarts, especially for LXSession.
 #---------------------------------------------------------------------------
 
 %prep
-%setup -q -n %{name}-master
+%setup -q -n %{name}-%{version}-git-%{git}
 %autosetup -p1
 sh ./autogen.sh
 
