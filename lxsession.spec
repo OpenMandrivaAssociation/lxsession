@@ -86,7 +86,7 @@ session autostarts, especially for LXSession.
 #---------------------------------------------------------------------------
 
 %prep
-%setup -q -n %{name}-%{version}-git-%{git}
+%setup -q -n %{name}
 %autosetup -p1
 sh ./autogen.sh
 
