@@ -85,7 +85,7 @@ session autostarts, especially for LXSession.
 #---------------------------------------------------------------------------
 
 %prep
-%setup -q
+%setup -q -n %{name}-master
 %autosetup -p1
 sh ./autogen.sh
 
