@@ -1,11 +1,15 @@
+%define git 20210129
+
 Summary:	The default X11 session manager of LXDE
 Name:		lxsession
 Version:	0.5.5
-Release:	1
+Release:	1.%{git}.0
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		http://www.lxde.org
-Source0:	https://downloads.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.xz
+# Current stable rel is old, use latest master git instead.
+Source0:  https://github.com/lxde/lxsession/archive/master.zip
+#Source0:	https://downloads.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.xz
 # Patch from https://sourceforge.net/p/lxde/bugs/760/#29fe/6196 to correct reload option behavior
 Patch1:	%{name}-0.5.2-git9f8d6133-reload.patch
 Patch2:	%{name}-0.5.2-notify-daemon-default.patch
@@ -21,7 +25,7 @@ BuildRequires:  gettext
 BuildRequires:  intltool
 #BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(glib-2.0)
-BuildRequires:  pkgconfig(gtk+-2.0)
+BuildRequires:  pkgconfig(gtk+-3.0)
 BuildRequires:  pkgconfig(indicator-0.4)
 BuildRequires:  pkgconfig(appindicator-0.1)
 BuildRequires:	pkgconfig(libnotify)
@@ -86,7 +90,7 @@ session autostarts, especially for LXSession.
 sh ./autogen.sh
 
 %build
-%configure --enable-advanced-notifications
+%configure --enable-advanced-notifications --enable-gtk3
 
 %make_build
 
