@@ -7,8 +7,8 @@ Release:	1.%{git}.0
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		http://www.lxde.org
-# Current stable rel is old, use latest master git instead.
-Source0:  https://github.com/lxde/lxsession/archive/master.zip
+# Current stable rel is old, use latest master git instead https://github.com/lxde/lxsession/
+Source0:  %{name}-master.zip
 #Source0:	https://downloads.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.xz
 # Patch from https://sourceforge.net/p/lxde/bugs/760/#29fe/6196 to correct reload option behavior
 Patch1:	%{name}-0.5.2-git9f8d6133-reload.patch
