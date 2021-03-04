@@ -86,6 +86,7 @@ session autostarts, especially for LXSession.
 
 %prep
 %autosetup -n lxsession-0.5.5-git-20210129 -p1
+rm *.stamp
 sh ./autogen.sh
 
 %build
