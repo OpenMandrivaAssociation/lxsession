@@ -43,7 +43,7 @@ BuildRequires:	pkgconfig(x11)
 BuildRequires:  docbook-xsl
 BuildRequires:	xsltproc
 BuildRequires:  vala
-BuildRequires:  pkgcinfig(vapigen)
+BuildRequires:  pkgconfig(vapigen)
 
 Provides:	lxde-session-manager
 
