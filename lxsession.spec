@@ -86,7 +86,9 @@ session autostarts, especially for LXSession.
 sh ./autogen.sh
 
 %build
-%configure --enable-advanced-notifications
+%configure \
+            --enable-advanced-notifications \
+            --enable-gtk3
 
 %make_build
 
