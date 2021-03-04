@@ -94,6 +94,8 @@ session autostarts, especially for LXSession.
 sh ./autogen.sh
 
 %build
+export CC=gcc
+export CXX=g++
 %configure --enable-advanced-notifications --enable-gtk3
 
 %make_build
