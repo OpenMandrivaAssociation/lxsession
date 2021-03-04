@@ -1,5 +1,10 @@
 %define git 20210129
 
+
+%define _disable_ld_no_undefined 1
+%define _disable_lto 1
+
+
 Summary:	The default X11 session manager of LXDE
 Name:		lxsession
 Version:	0.5.5
