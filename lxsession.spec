@@ -21,7 +21,7 @@ BuildRequires:  gettext
 BuildRequires:  intltool
 #BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(glib-2.0)
-BuildRequires:  pkgconfig(gtk+-2.0)
+BuildRequires:  pkgconfig(gtk+-3.0)
 BuildRequires:  pkgconfig(indicator-0.4)
 BuildRequires:  pkgconfig(appindicator-0.1)
 BuildRequires:	pkgconfig(libnotify)
