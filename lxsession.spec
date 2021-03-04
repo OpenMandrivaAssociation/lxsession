@@ -28,7 +28,10 @@ BuildRequires:	docbook-style-xsl
 #BuildRequires:  docbook-utils
 BuildRequires:  gettext
 BuildRequires:  intltool
-#BuildRequires:	pkgconfig(dbus-glib-1)
+BuildRequires:  pkgconfig(dbus-1)
+BuildRequires:	pkgconfig(dbus-glib-1)
+BuildRequires:  pkgconfig(gee-1.0)
+BuildRequires:  pkgconfig(gio-unix-2.0)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(gtk+-3.0)
 BuildRequires:  pkgconfig(indicator-0.4)
@@ -36,9 +39,11 @@ BuildRequires:  pkgconfig(appindicator-0.1)
 BuildRequires:	pkgconfig(libnotify)
 BuildRequires:  pkgconfig(unique-1.0)
 BuildRequires:  pkgconfig(polkit-agent-1)
-#BuildRequires:	pkgconfig(x11)
+BuildRequires:	pkgconfig(x11)
+BuildRequires:  docbook-xsl
 BuildRequires:	xsltproc
 BuildRequires:  vala
+BuildRequires:  pkgcinfig(vapigen)
 
 Provides:	lxde-session-manager
 
@@ -94,8 +99,8 @@ session autostarts, especially for LXSession.
 sh ./autogen.sh
 
 %build
-export CC=gcc
-export CXX=g++
+#export CC=gcc
+#export CXX=g++
 %configure --enable-advanced-notifications --enable-gtk3
 
 %make_build
