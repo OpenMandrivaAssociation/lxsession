@@ -15,7 +15,6 @@ Source0:  %{name}-%{version}-git-%{git}.tar.gz
 Patch1:	%{name}-0.5.2-git9f8d6133-reload.patch
 Patch2:	%{name}-0.5.2-notify-daemon-default.patch
 Patch3:	lxpolkit-0.5.5-openmandriva-disable-lxpolkit-autostart-for-other-environments.patch
-Patch4:	d8ff02363de5e7e8cd3bc51958104cfa81b4a9bc.patch
 
 BuildRequires:  desktop-file-utils
 BuildRequires:	docbook-to-man
