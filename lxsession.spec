@@ -1,7 +1,9 @@
+%define _disable_lto 1
+
 Summary:	The default X11 session manager of LXDE
 Name:		lxsession
 Version:	0.5.5
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		http://www.lxde.org
