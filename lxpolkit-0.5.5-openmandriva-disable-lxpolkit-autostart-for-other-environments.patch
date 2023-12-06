@@ -1,10 +1,10 @@
---- lxsession-0.5.5/data/lxpolkit.desktop.in.in~	2020-03-31 14:14:50.000000000 +0100
-+++ lxsession-0.5.5/data/lxpolkit.desktop.in.in	2020-03-31 15:47:36.583235902 +0100
+--- a/data/lxpolkit.desktop.in.in
++++ b/data/lxpolkit.desktop.in.in
 @@ -6,5 +6,5 @@
  Exec=lxpolkit
  TryExec=lxpolkit
  Icon=gtk-dialog-authentication
--NotShowIn=GNOME;KDE;MATE;
--Hidden=true
+-NotShowIn=GNOME;KDE;MATE;LXQt;XFCE;Unity;X-Cinnamon;
 +OnlyShowIn=LXDE;
-+Hidden=false
+ NoDisplay=true
+

@@ -1,37 +1,56 @@
-%define _disable_lto 1
+#FIMXE: workaround for clang 16
+%global optflags %{optflags} -Wno-incompatible-function-pointer-types
+
+# git snapshot
+%global snapshot 1
+%if 0%{?snapshot}
+	%global commit		e0fffa6645f7c8b1ee9ea1088acd051ba8e733d4
+	%global commitdate	20230917
+	%global shortcommit	%(c=%{commit}; echo ${c:0:7})
+%endif
+
 
 Summary:	The default X11 session manager of LXDE
 Name:		lxsession
 Version:	0.5.5
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		http://www.lxde.org
-Source0:	https://downloads.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.xz
-# Patch from https://sourceforge.net/p/lxde/bugs/760/#29fe/6196 to correct reload option behavior
-Patch1:	%{name}-0.5.2-git9f8d6133-reload.patch
-Patch2:	%{name}-0.5.2-notify-daemon-default.patch
-Patch3:	lxpolkit-0.5.5-openmandriva-disable-lxpolkit-autostart-for-other-environments.patch
-Patch4:	d8ff02363de5e7e8cd3bc51958104cfa81b4a9bc.patch
+#Source0:	https://downloads.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.xz
+Source0:	https://github.com/lxde/lxsession/archive/%{?snapshot:%{commit}}%{!?snapshot:%{version}}/%{name}-%{?snapshot:%{commit}}%{!?snapshot:%{version}}.tar.gz
 
-BuildRequires:  desktop-file-utils
+# Patch from https://sourceforge.net/p/lxde/bugs/760/#29fe/6196 to correct reload option behavior
+Patch1:		lxsession-0.5.2-git9f8d6133-reload.patch
+Patch2:		lxsession-0.5.2-notify-daemon-default.patch
+Patch3:		lxsession-0.5.4-load-settings-nullcheck.patch
+Patch5:		lxsession-0.5.5-use_gtk3_indicators.patch
+Patch6:		lxsession-0.5.5-add-custom-xdg-config-dir.patch
+Patch100:	lxpolkit-0.5.5-openmandriva-disable-lxpolkit-autostart-for-other-environments.patch
+
+BuildRequires:	desktop-file-utils
 BuildRequires:	docbook-to-man
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	docbook-style-xsl
-#BuildRequires:  docbook-utils
-BuildRequires:  gettext
-BuildRequires:  intltool
+#BuildRequires:	docbook-utils
+BuildRequires:	gettext
+BuildRequires:	intltool
 #BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(glib-2.0)
-BuildRequires:  pkgconfig(gtk+-2.0)
-BuildRequires:  pkgconfig(indicator-0.4)
-BuildRequires:  pkgconfig(appindicator-0.1)
+BuildRequires:	pkgconfig(gtk+-3.0)
+BuildRequires:	pkgconfig(indicator3-0.4)
+BuildRequires:	pkgconfig(appindicator3-0.1)
 BuildRequires:	pkgconfig(libnotify)
-BuildRequires:  pkgconfig(unique-1.0)
-BuildRequires:  pkgconfig(polkit-agent-1)
+BuildRequires:	pkgconfig(unique-3.0)
+BuildRequires:	pkgconfig(polkit-agent-1)
 #BuildRequires:	pkgconfig(x11)
 BuildRequires:	xsltproc
-BuildRequires:  vala
+BuildRequires:	vala
+
+
+Requires:	notification-daemon
+# required for suspend and hibernate
+Requires:	upower
 
 Provides:	lxde-session-manager
 
@@ -48,57 +67,6 @@ restart them the next time the user logs in.
 
 LXSession is the standard session manager used by LXDE but it's
 desktop-independent and can be used with any window manager.
-
-#---------------------------------------------------------------------------
-
-%package -n lxpolkit
-Summary:        Simple PolicyKit authentication agent
-Requires:       polkit >= 0.95
-# required to replace polkit-gnome and polkit-kde
-Provides:       PolicyKit-authentication-agent
-
-%description -n lxpolkit
-LXDE, which stands for Lightweight X11 Desktop Environment, is a desktop
-environment which is lightweight and fast. It is designed to be user friendly
-and slim, while keeping the resource usage low. LXDE uses less RAM and less CPU
-while being a feature rich desktop environment.
-
-LXPolKit is a simple PolicyKit authentication agent developed for LXDE, the
-Lightweight X11 Desktop Environment.
-
-#---------------------------------------------------------------------------
-
-%package edit
-Summary:        The standard session edit manager used by LXDE
-
-%description edit
-LXDE, which stands for Lightweight X11 Desktop Environment, is a desktop
-environment which is lightweight and fast. It is designed to be user friendly
-and slim, while keeping the resource usage low. LXDE uses less RAM and less CPU
-while being a feature rich desktop environment.
-
-LXSession-edit is a tool used to manage freedesktop.org compliant desktop
-session autostarts, especially for LXSession.
-
-#---------------------------------------------------------------------------
-
-%prep
-%setup -q
-%autosetup -p1
-sh ./autogen.sh
-
-%build
-%configure --enable-advanced-notifications
-
-%make_build
-
-%install
-%make_install
-
-mkdir -p %{buildroot}%{_datadir}/app-install/desktop
-
-# locales
-%find_lang %{name}
 
 %files -f %{name}.lang
 %{_bindir}/lxlock
@@ -121,12 +89,69 @@ mkdir -p %{buildroot}%{_datadir}/app-install/desktop
 %{_libexecdir}/%{name}/%{name}-xsettings
 %{_mandir}/man1/*
 
+#---------------------------------------------------------------------------
+
+%package -n lxpolkit
+Summary:        Simple PolicyKit authentication agent
+Requires:       polkit >= 0.95
+
+%description -n lxpolkit
+LXDE, which stands for Lightweight X11 Desktop Environment, is a desktop
+environment which is lightweight and fast. It is designed to be user friendly
+and slim, while keeping the resource usage low. LXDE uses less RAM and less CPU
+while being a feature rich desktop environment.
+
+LXPolKit is a simple PolicyKit authentication agent developed for LXDE, the
+Lightweight X11 Desktop Environment.
+
 %files -n lxpolkit
 %{_bindir}/lxpolkit
 %{_sysconfdir}/xdg/autostart/lxpolkit.desktop
 %{_datadir}/%{name}/ui/lxpolkit.ui
 
+#---------------------------------------------------------------------------
+
+%package edit
+Summary:        The standard session edit manager used by LXDE
+
+%description edit
+LXDE, which stands for Lightweight X11 Desktop Environment, is a desktop
+environment which is lightweight and fast. It is designed to be user friendly
+and slim, while keeping the resource usage low. LXDE uses less RAM and less CPU
+while being a feature rich desktop environment.
+
+LXSession-edit is a tool used to manage freedesktop.org compliant desktop
+session autostarts, especially for LXSession.
+
 %files edit
 %{_bindir}/%{name}-edit
 %{_datadir}/applications/lxsession-edit.desktop
 %{_datadir}/%{name}/ui/lxsession-edit.ui
+
+#---------------------------------------------------------------------------
+
+%prep
+%autosetup -p1 -n %{name}-%{?snapshot:%{commit}}%{!?snapshot:%{version}}
+
+
+%build
+sh ./autogen.sh
+%configure \
+	--enable-advanced-notifications \
+	--enable-buildin-clipboard \
+	--enable-gtk3 \
+	--enable-man \
+	--disable-silent-rules \
+	--enable-debug \
+	%{nil}
+
+%make_build
+
+%install
+%make_install
+
+mkdir -p %{buildroot}%{_datadir}/app-install/desktop
+
+# locales
+%find_lang %{name}
+
