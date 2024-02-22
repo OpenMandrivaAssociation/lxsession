@@ -1,23 +1,23 @@
 --- a/configure.ac
 +++ b/configure.ac
-@@ -117,7 +117,7 @@ AM_CONDITIONAL(USE_GTK3, test "$enable_g
+@@ -117,7 +117,7 @@ AM_CONDITIONAL(USE_GTK3, test "$enable_gtk3" = "yes")
  AM_CONDITIONAL(USE_ADVANCED_NOTIFICATIONS, test "$use_advanced_notifications" = "yes")
  
  if test "$use_advanced_notifications" = "yes"; then
 -  PKG_CHECK_MODULES(INDICATORS, [indicator-0.4 >= 0.4.93 appindicator-0.1])
-+  PKG_CHECK_MODULES(INDICATORS, [indicator3-0.4 >= 0.4.93 appindicator3-0.1])
++  PKG_CHECK_MODULES(INDICATORS, [ayatana-indicator3-0.4 >= 0.4.93 ayatana-appindicator3-0.1])
    AC_SUBST(INDICATORS_CFLAGS)
    AC_SUBST(INDICATORS_LIBS)
  
-
 --- a/Makefile.am
 +++ b/Makefile.am
-@@ -460,7 +460,7 @@ lxsession_lxsession_LDADD += \
+@@ -461,7 +461,7 @@ lxsession_lxsession_LDADD += \
  
  if USE_ADVANCED_NOTIFICATIONS
  lxsession_lxsession_VALAFLAGS +=     \
 -    --pkg appindicator-0.1 \
-+    --pkg appindicator3-0.1 \
++    --pkg ayatana-appindicator3-0.1 \
      --pkg libnotify \
      -D USE_ADVANCED_NOTIFICATIONS
  
+
