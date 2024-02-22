@@ -13,7 +13,7 @@
 Summary:	The default X11 session manager of LXDE
 Name:		lxsession
 Version:	0.5.5
-Release:	3
+Release:	4
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		http://www.lxde.org
@@ -24,7 +24,7 @@ Source0:	https://github.com/lxde/lxsession/archive/%{?snapshot:%{commit}}%{!?sna
 Patch1:		lxsession-0.5.2-git9f8d6133-reload.patch
 Patch2:		lxsession-0.5.2-notify-daemon-default.patch
 Patch3:		lxsession-0.5.4-load-settings-nullcheck.patch
-Patch5:		lxsession-0.5.5-use_gtk3_indicators.patch
+Patch5:		lxsession-0.5.5-use_ayatana_indicators.patch
 Patch6:		lxsession-0.5.5-add-custom-xdg-config-dir.patch
 Patch100:	lxpolkit-0.5.5-openmandriva-disable-lxpolkit-autostart-for-other-environments.patch
 
@@ -35,20 +35,22 @@ BuildRequires:	docbook-style-xsl
 #BuildRequires:	docbook-utils
 BuildRequires:	gettext
 BuildRequires:	intltool
-#BuildRequires:	pkgconfig(dbus-glib-1)
+BuildRequires:	pkgconfig(ayatana-appindicator3-0.1)
+BuildRequires:	pkgconfig(ayatana-indicator3-0.4)
+BuildRequires:	pkgconfig(dbus-1)
+BuildRequires:	pkgconfig(dbus-glib-1)
+BuildRequires:	pkgconfig(gio-unix-2.0)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk+-3.0)
-BuildRequires:	pkgconfig(indicator3-0.4)
-BuildRequires:	pkgconfig(appindicator3-0.1)
 BuildRequires:	pkgconfig(libnotify)
 BuildRequires:	pkgconfig(unique-3.0)
 BuildRequires:	pkgconfig(polkit-agent-1)
-#BuildRequires:	pkgconfig(x11)
+BuildRequires:	pkgconfig(x11)
 BuildRequires:	xsltproc
 BuildRequires:	vala
 
-
 Requires:	notification-daemon
+Requires:	polkit-agent
 # required for suspend and hibernate
 Requires:	upower
 
@@ -92,8 +94,8 @@ desktop-independent and can be used with any window manager.
 #---------------------------------------------------------------------------
 
 %package -n lxpolkit
-Summary:        Simple PolicyKit authentication agent
-Requires:       polkit >= 0.95
+Summary:	Simple PolicyKit authentication agent
+Requires:	polkit >= 0.95
 
 %description -n lxpolkit
 LXDE, which stands for Lightweight X11 Desktop Environment, is a desktop
@@ -112,7 +114,7 @@ Lightweight X11 Desktop Environment.
 #---------------------------------------------------------------------------
 
 %package edit
-Summary:        The standard session edit manager used by LXDE
+Summary:	The standard session edit manager used by LXDE
 
 %description edit
 LXDE, which stands for Lightweight X11 Desktop Environment, is a desktop
