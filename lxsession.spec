@@ -4,8 +4,8 @@
 # git snapshot
 %global snapshot 1
 %if 0%{?snapshot}
-	%global commit		835c1f8e383673736dcd56403eaf6b1c52514bca
-	%global commitdate	20240322
+	%global commit		f68f4779a6ba4edd4f4e3e7641a8ab1e0486c8d6
+	%global commitdate	20240416
 	%global shortcommit	%(c=%{commit}; echo ${c:0:7})
 %endif
 
@@ -13,7 +13,7 @@
 Summary:	The default X11 session manager of LXDE
 Name:		lxsession
 Version:	0.5.5
-Release:	5
+Release:	6
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		http://www.lxde.org
