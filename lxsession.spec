@@ -16,7 +16,7 @@ Version:	0.5.5
 Release:	6
 License:	GPLv2+
 Group:		Graphical desktop/Other
-Url:		http://www.lxde.org
+Url:		https://www.lxde.org
 #Source0:	https://downloads.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.xz
 Source0:	https://github.com/lxde/lxsession/archive/%{?snapshot:%{commit}}%{!?snapshot:%{version}}/%{name}-%{?snapshot:%{commit}}%{!?snapshot:%{version}}.tar.gz
 
