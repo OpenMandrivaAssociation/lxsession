@@ -2,7 +2,7 @@
 %global optflags %{optflags} -Wno-incompatible-function-pointer-types
 
 # git snapshot
-%global snapshot 1
+#global snapshot 1
 %if 0%{?snapshot}
 	%global commit		c72db4f8c06c2d6be6dcb13fad838f619f51f8a7
 	%global commitdate	20241019
@@ -12,8 +12,8 @@
 
 Summary:	The default X11 session manager of LXDE
 Name:		lxsession
-Version:	0.5.5
-Release:	7
+Version:	0.5.6
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		https://www.lxde.org
