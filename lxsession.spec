@@ -28,6 +28,11 @@ Patch5:		lxsession-0.5.5-use_ayatana_indicators.patch
 Patch6:		lxsession-0.5.5-add-custom-xdg-config-dir.patch
 Patch100:	lxpolkit-0.5.5-openmandriva-disable-lxpolkit-autostart-for-other-environments.patch
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	desktop-file-utils
 BuildRequires:	docbook-to-man
 BuildRequires:	docbook-dtd412-xml
